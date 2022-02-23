@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>EmployeeManageSystem</display-name>
+  <!-- 欢迎页 -->
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  
+  <!-- 配置servelt -->
+  <servlet>
+  	<!-- servlet别名 -->
+  	<servlet-name>sf</servlet-name>
+  	<!-- sevlet类完整路径 -->
+  	<servlet-class>servlet.StaffServlet</servlet-class>
+  </servlet>
+  <!-- 配置servlet映射 -->
+  <servlet-mapping>
+  	<servlet-name>sf</servlet-name>
+  	<!-- 设置servlet匹配路径，*表示可以匹配所有路径 -->
+  	<url-pattern>/s</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>page</servlet-name>
+  	<servlet-class>servlet.PageServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>page</servlet-name>
+  	<url-pattern>/p</url-pattern>
+  </servlet-mapping>
+  
+	<!-- 过滤器 -->
+	<filter>
+		<!-- 指定filter类的别名-->
+		<filter-name>character</filter-name>
+		<!-- 指定filter类的完整包路径 -->
+		<filter-class>filter.CharacterEncodingFilter</filter-class>
+  	</filter>
+	<!-- 过滤器映射 -->
+	<filter-mapping>
+		<filter-name>character</filter-name>
+		<!-- 指定filter的拦截路径 -->
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+  	<filter>
+		<!-- 指定filter类的别名-->
+		<filter-name>login</filter-name>
+		<!-- 指定filter类的完整包路径 -->
+		<filter-class>filter.LoginFilter</filter-class>
+  	</filter>
+	<!-- 过滤器映射 -->
+	<filter-mapping>
+		<filter-name>login</filter-name>
+		<!-- 指定filter的拦截路径 -->
+		<url-pattern>/s</url-pattern>
+	</filter-mapping>
+	
+	
+	
+	<!-- 监听器 -->
+<!-- 	<listener>
+		<listener-class>listener.MyListener</listener-class>
+	</listener> -->
+	
+</web-app>

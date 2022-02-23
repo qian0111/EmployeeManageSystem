@@ -1,0 +1,23 @@
+控制层：servlet/action/controller
+接收客户端发送的请求HTTP/RPC/UDP，进行简单的请求处理，然后将请求发送给业务层
+
+业务层：service
+接收来自控制层的请求，进行业务的相关处理
+
+数据访问层：dao
+dao层被service调用，用来连接数据库，执行相关sql语句。
+
+==========================================
+模型层：model/entity/pojo/vo/bo
+存放实体类
+
+EJB-->spring-->structs/hibernate/-->structs2(SSH)-->SSM
+-->springboot-->springcloud/service mesh/istio
+
+HFS
+dubbo:RPC通信协议，快；组件不完善；
+netfilx 网飞
+springcloud alibaba
+
+视图层：view
+前端页面
